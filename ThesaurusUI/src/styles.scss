@@ -1,0 +1,149 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import './app/vendor/semantic.min.css';
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+.inputError{ background-color:#FF0000; }
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
+.ui.menu .item img.logo {
+    margin-right: 1.5em;
+}
+
+form.ui.segment.form {
+  background-color: #F1F9FF;
+  margin-top: 2em;
+}
+
+form.form:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.votes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E6E6E6;
+  padding: 1em 0;
+  border-radius: 5px;
+}
+
+.ui.grid.posts {
+  margin-top: 2em;
+}
+
+.meta {
+  color: #9A9A9A
+}
+
+.ui.grid>.row>.column.votes {
+  display: flex;
+}
+
+ul.ui.list li:before {
+  content: '';
+}
+
+.voters {
+  clear: both;
+  width: 100%;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  h1 {
+    color: #264D73;
+    font-size: 2.5rem;
+  }
+  h2, h3 {
+    color: #444;
+    font-weight: lighter;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  body {
+    padding: .5rem;
+    max-width: 1000px;
+    margin: auto;
+  }
+  @media (min-width: 600px) {
+    body {
+      padding: 2rem;
+    }
+  }
+  body, input[text] {
+    color: #333;
+    font-family: Cambria, Georgia, serif;
+  }
+  a {
+    cursor: pointer;
+  }
+  button {
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  button:hover {
+    background-color: black;
+    color: white;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+  }
+  
+  /* Navigation link styles */
+  nav a {
+    padding: 5px 10px;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    background-color: #e8e8e8;
+    color: #3d3d3d;
+    border-radius: 4px;
+  }
+  
+  nav a:hover {
+    color: white;
+    background-color:  #42545C;
+  }
+  nav a.active {
+    background-color: black;
+    color: white;
+  }
+  hr {
+    margin: 1.5rem 0;
+  }
+  input[type="text"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: .5rem;
+  }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

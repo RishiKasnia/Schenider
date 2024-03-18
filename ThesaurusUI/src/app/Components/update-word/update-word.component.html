@@ -1,0 +1,44 @@
+<form class="ui large form segment">
+  <h3 class="ui header">Update word</h3>
+  <div class="field">
+    <label for="title">Title:</label>
+    <input
+      name="title"
+      [(ngModel)]="wordModel.title"
+      id="title"
+      #newupdatedtitle
+      ng-required="true"
+    />
+  </div>
+
+  <div class="field">
+    <label for="description">Description:</label>
+    <input
+      name="description"
+      [(ngModel)]="wordModel.description"
+      id="description"
+      #newupdatededscription
+      ng-required="true"
+    />
+  </div>
+
+  <div class="field">
+    <label for="synonym">Synonym:</label>
+    <input
+      name="synonym"
+      [ngModel]="getSynonymString(wordModel.synonyms)"
+      id="synonym"
+      #newupdatedsynonym
+      ng-required="true"
+    />
+  </div>
+
+  <button
+    (click)="
+      updateWord(newupdatedtitle, newupdatededscription, newupdatedsynonym)
+    "
+    class="ui positive right floated button"
+  >
+    Update word
+  </button>
+</form>

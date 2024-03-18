@@ -1,0 +1,17 @@
+
+<mat-tab-group mat-align-tabs="center">
+  <mat-tab label="Add Word">
+    <app-new-word (NewWordValues)="AddNewWordValues($event)"></app-new-word>
+  </mat-tab>
+  <mat-tab label="Search">
+    <app-search (DeletedWordEvent)="RemovedWordValue($event)"  (UpdatedWordEvent)="UpdateWordValues($event)"></app-search>
+  </mat-tab>
+  <mat-tab label="Word List">
+    <div class="ui grid posts">
+      <app-word (RemovedWordValues)="RemovedWordValue($event)" *ngFor="let word of WordsFromApi" [wordModel]="word"> 
+     </app-word>
+      </div>
+  </mat-tab>
+</mat-tab-group>
+
+

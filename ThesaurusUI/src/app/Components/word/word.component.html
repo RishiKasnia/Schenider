@@ -1,0 +1,22 @@
+<div class="four wide column center aligned votes">
+  <div class="ui large header" style="text-align: left">
+    <div class="value">
+      {{ wordModel.title }}
+    </div>
+  </div>
+</div>
+<div class="twelve wide column" style="overflow-x: hidden">
+  <div class="meta">
+    Description: {{ wordModel.description }}
+    <ul class="ui big horizontal list voters">
+      <li class="item" *ngFor="let syn of wordModel.synonyms">
+        <a>
+          {{ syn.title }}
+        </a>
+      </li>
+    </ul>
+    <button (click)="deleteWord()" class="ui positive right floated button">
+      Delete word
+    </button>
+  </div>
+</div>

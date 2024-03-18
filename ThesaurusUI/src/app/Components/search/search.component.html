@@ -1,0 +1,35 @@
+
+
+    <form class="ui large form segment">
+    <h3 class="ui header">Search word</h3>
+    <div [ngStyle]="{'float':'left'}">
+        <mat-form-field>
+          <input matInput type="text"  placeholder="Search" aria-label="State" [matAutocomplete]="auto" [formControl]="searchWordsCtrl">
+          <mat-autocomplete #auto="matAutocomplete" [panelWidth]="200" (optionSelected)='getWord($event.option.value)'>
+            <mat-option *ngIf="isLoading" class="is-loading">Loading...</mat-option>
+            <ng-container *ngIf="!isLoading">
+              <mat-option *ngFor="let word of filteredWords" [value]="word">
+                <span>{{word}}</span>
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </mat-form-field>
+      
+        <br>
+      
+      <ng-container *ngIf="errorMsg;">
+        {{errorMsg}}
+      </ng-container>
+      <!-- <ng-template #elseTemplate>
+        <h5>Selected Value: {{searchWordsCtrl.value}}</h5>
+      </ng-template>      -->
+      </div>
+      <div style="margin-left: 40%; overflow-x: hidden"> 
+        <app-word (RemovedWordValues)="RemovedWordValue($event)" *ngIf="searchWord && !showUpdateControl && !isWordDeleted" [wordModel]="searchWord"> </app-word>
+        <app-update-word (UpdatedWordValues)="UpdatedWordValues($event)" *ngIf="searchWord && showUpdateControl" [wordModel]="searchWord"></app-update-word>
+        <a *ngIf="searchWord && !showUpdateControl && !isWordDeleted" href (click)="showUpdate()" style="float: right; font-size: 13px">
+          Click for update
+       </a>
+      </div>
+   </form>
+
